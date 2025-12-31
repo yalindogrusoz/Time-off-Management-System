@@ -12,8 +12,47 @@ After log-in, a user can always click on the Home button at the top right, allow
 
 ## Employee
 
+The Employee Panel is shown below. 
+![](EmployeePanel.png)
+The top-right displays the Employee's balance expressed as currentBalance/maxBalance where the number on the right represents the Employee's annual balance, and the left represents their remaining balance for that year.
+
+### Requesting Time-Off
+The "Request Time-off" button pops-up the page shown below, and can be used to request time-off requests, which are redirected to the Employee's corresponding Manager.
+![](TimeOffRequest.png)
+This pop-up form allows the employee to input the starting and ending date of their requested time-off, and a reason alongside. 
+
+There is a supplementary calendar displayed on the right-hand side showing each month, where the red highlighted days are restricted by the manager. These restrictions may be dates blocked by the manager (for example, an important event) or they may be dates where a number of employees from that manager's team has already taken time-off, and the system blocks too many employees from asking time-off at the same dates.
+
+Requests including any restricted dates (which are already displayed) and exceeding the Employee's current balance will be met with an error message preventing them to do so.
+
+### Withdrawal Requests
+
+Employees can choose to withdraw their time-off requests if they wish to do so. If they have an approved time-off for a future date, and they change their mind about it, they can submit a withdrawal request through the "Request Withdrawal" button which will, if accepted, cancel their time-off request and refund their balance.
+
+### Displays
+
+Both a list of previous and future time-off and withdrawal requests are displayed on the Employee Panel, allowing them to keep track of their submitted requests and view its status.
 
 ## Manager
 
+The Manager Panel is shown below.
+![](ManagerPanel.png)
+
+The two panels for pending time-off and withdrawal requests are where employee requests are redirected for the manager to process (accept or deny) the requests.
+
+Below, the "Add Restriction" and "Remove Restriction" buttons allow the manager to edit the restrictions on the requests coming from their team by blocking certain dates and/or setting a limit to the maximum people from their team to take time-off on a given day.
+
+The current version of the application only includes the two mentioned types of restriction, however the Restriction super-class is built extensibly, meaning that it can be adapted to extend and support other types of restrictions easily.
 
 ## Administrator
+
+The Administrator Panel is shown below.
+![](AdminPanel.png)
+
+The admin can add Employees and Managers through the following buttons which pop-up a form to input corresponding data. 
+
+Furthermore, the lists under the "Add Employee" and "Add Manager" buttons are a list of currently-existing Employee and Manager objects respectively, and double clicking on an object pops-up the same form used to add objects, where the administrator can edit the information of users. 
+
+Managers should be created first, as creating Employees asks for the Employee's corresponding manager through a dropdown option.
+
+The "Reset All Balances" button verifies the administrators' choice through a pop-up, and if clicked and verifies, resets all of the Employees' balances to their annual limit. This button is intended for use at the end of each year, when balances reset.

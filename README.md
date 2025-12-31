@@ -1,7 +1,7 @@
-# Time-off-Management-System
-Java application with access levels (Employee, Manager, Administrator) for online time-off management in businesses.
+# Timeoff-Management-System
+This is a Java application with access levels (Employee, Manager, Administrator) for online timeoff management in businesses.
 
-The UI was built through Java.Swing, and supports all character sets for foreign use.
+The UI was built via Java.Swing, and supports all character sets for foreign use. 
 
 ## Log-in
 The application redirects all users to the log-in page, where username and password is asked for input. 
@@ -16,31 +16,31 @@ The Employee Panel is shown below.
 ![](EmployeePanel.png)
 The top-right displays the Employee's balance expressed as currentBalance/maxBalance where the number on the right represents the Employee's annual balance, and the left represents their remaining balance for that year.
 
-### Requesting Time-Off
-The "Request Time-off" button pops-up the page shown below, and can be used to request time-off requests, which are redirected to the Employee's corresponding Manager.
+### Requesting Timeoff
+The "Request Timeoff" button pops-up the page shown below, and can be used to request timeoff requests, which are redirected to the Employee's corresponding Manager.
 ![](TimeOffRequest.png)
-This pop-up form allows the employee to input the starting and ending date of their requested time-off, and a reason alongside. 
+This pop-up form allows the employee to input the starting and ending date of their requested timeoff, and a reason alongside. 
 
-There is a supplementary calendar displayed on the right-hand side showing each month, where the red highlighted days are restricted by the manager. These restrictions may be dates blocked by the manager (for example, an important event) or they may be dates where a number of employees from that manager's team has already taken time-off, and the system blocks too many employees from asking time-off at the same dates.
+There is a supplementary calendar displayed on the right-hand side showing each month, where the red highlighted days are restricted by the manager. These restrictions may be dates blocked by the manager (for example, an important event) or they may be dates where a number of employees from that manager's team has already taken timeoff, and the system blocks too many employees from asking timeoff at the same dates.
 
 Requests including any restricted dates (which are already displayed) and exceeding the Employee's current balance will be met with an error message preventing them to do so.
 
 ### Withdrawal Requests
 
-Employees can choose to withdraw their time-off requests if they wish to do so. If they have an approved time-off for a future date, and they change their mind about it, they can submit a withdrawal request through the "Request Withdrawal" button which will, if accepted, cancel their time-off request and refund their balance.
+Employees can choose to withdraw their timeoff requests if they wish to do so. If they have an approved timeoff for a future date, and they change their mind about it, they can submit a withdrawal request through the "Request Withdrawal" button which will, if accepted, cancel their timeoff request and refund their balance.
 
 ### Displays
 
-Both a list of previous and future time-off and withdrawal requests are displayed on the Employee Panel, allowing them to keep track of their submitted requests and view its status.
+Both a list of previous and future timeoff and withdrawal requests are displayed on the Employee Panel, allowing them to keep track of their submitted requests and view its status.
 
 ## Manager
 
 The Manager Panel is shown below.
 ![](ManagerPanel.png)
 
-The two panels for pending time-off and withdrawal requests are where employee requests are redirected for the manager to process (accept or deny) the requests.
+The two panels for pending timeoff and withdrawal requests are where employee requests are redirected for the manager to process (accept or deny) the requests.
 
-Below, the "Add Restriction" and "Remove Restriction" buttons allow the manager to edit the restrictions on the requests coming from their team by blocking certain dates and/or setting a limit to the maximum people from their team to take time-off on a given day.
+Below, the "Add Restriction" and "Remove Restriction" buttons allow the manager to edit the restrictions on the requests coming from their team by blocking certain dates and/or setting a limit to the maximum people from their team to take timeoff on a given day.
 
 The current version of the application only includes the two mentioned types of restriction, however the Restriction super-class is built extensibly, meaning that it can be adapted to extend and support other types of restrictions easily.
 
